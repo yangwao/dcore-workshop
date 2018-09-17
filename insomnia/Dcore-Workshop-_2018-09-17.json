@@ -1,7 +1,7 @@
 {
 	"_type": "export",
 	"__export_format": 3,
-	"__export_date": "2018-09-17T07:45:30.561Z",
+	"__export_date": "2018-09-17T09:33:16.786Z",
 	"__export_source": "insomnia.desktop.app:v6.0.2",
 	"resources": [
 		{
@@ -20,7 +20,7 @@
 			"data": {},
 			"isPrivate": false,
 			"metaSortKey": 1537166848927,
-			"modified": 1537166848927,
+			"modified": 1537170903732,
 			"name": "New Environment",
 			"parentId": "wrk_3ef84cc1dffa458aae219afafff3d962",
 			"_type": "environment"
@@ -53,7 +53,7 @@
 			"isPrivate": false,
 			"metaSortKey": -1537167442370,
 			"method": "POST",
-			"modified": 1537169993979,
+			"modified": 1537176734286,
 			"name": "info",
 			"parameters": [],
 			"parentId": "wrk_3ef84cc1dffa458aae219afafff3d962",
@@ -181,8 +181,8 @@
 			"isPrivate": false,
 			"metaSortKey": -1537163213760.3125,
 			"method": "POST",
-			"modified": 1537170182822,
-			"name": "is_locked (Copy)",
+			"modified": 1537175114385,
+			"name": "is_new",
 			"parameters": [],
 			"parentId": "wrk_3ef84cc1dffa458aae219afafff3d962",
 			"settingDisableRenderRequestBody": false,
@@ -199,7 +199,7 @@
 			"authentication": {},
 			"body": {
 				"mimeType": "application/json",
-				"text": "{\n\t\"jsonrpc\": \"2.0\",\n\t\"method\": \"get_account\",\n\t\"params\": [\"public-account-1\"],\n\t\"id\": 1\n}"
+				"text": "{\n\t\"jsonrpc\": \"2.0\",\n\t\"method\": \"get_account\",\n\t\"params\": [\"public-account-10\"],\n\t\"id\": 1\n}"
 			},
 			"created": 1537170195680,
 			"description": "",
@@ -213,7 +213,7 @@
 			"isPrivate": false,
 			"metaSortKey": -1537163072806.6562,
 			"method": "POST",
-			"modified": 1537170220685,
+			"modified": 1537176746463,
 			"name": "get_account",
 			"parameters": [],
 			"parentId": "wrk_3ef84cc1dffa458aae219afafff3d962",
@@ -277,8 +277,72 @@
 			"isPrivate": false,
 			"metaSortKey": -1537162967091.414,
 			"method": "POST",
-			"modified": 1537170293501,
+			"modified": 1537170904087,
 			"name": "list_my_accounts",
+			"parameters": [],
+			"parentId": "wrk_3ef84cc1dffa458aae219afafff3d962",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "http://0.0.0.0:18093",
+			"_type": "request"
+		},
+		{
+			"_id": "req_e305fc0bfe3f4883aa2df7a412328767",
+			"authentication": {},
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n\t\"jsonrpc\": \"2.0\",\n\t\"method\": \"suggest_brain_key\",\n\t\"params\": [],\n\t\"id\": 1\n}"
+			},
+			"created": 1537176579142,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_798dcf6670214f99ab5971223ebe7fe6",
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1537162949472.207,
+			"method": "POST",
+			"modified": 1537176600513,
+			"name": "suggest_brain_key",
+			"parameters": [],
+			"parentId": "wrk_3ef84cc1dffa458aae219afafff3d962",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "http://0.0.0.0:18093",
+			"_type": "request"
+		},
+		{
+			"_id": "req_c2f253693a82489b82baaee06ae94103",
+			"authentication": {},
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n\t\"jsonrpc\": \"2.0\",\n\t\"method\": \"get_object\",\n\t\"params\": [\"1.2.15\"],\n\t\"id\": 1\n}"
+			},
+			"created": 1537176699368,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_798dcf6670214f99ab5971223ebe7fe6",
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1537162940662.6035,
+			"method": "POST",
+			"modified": 1537176758741,
+			"name": "get_object",
 			"parameters": [],
 			"parentId": "wrk_3ef84cc1dffa458aae219afafff3d962",
 			"settingDisableRenderRequestBody": false,
