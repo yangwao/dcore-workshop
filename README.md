@@ -14,6 +14,11 @@ docker-compose up -d
 hint: if you want to see logs omit the -d flag `docker-compose up`
 
 ### Start server
+Install dependencies before starting the server
+```
+npm install
+```
+Start the server
 ```
 npm start
 ```
@@ -37,4 +42,7 @@ docker exec -it example-app-dcore-cliwallet bash
 ```
 
 ### Dcore
-Connect to the wallet through websockets
+Connect to the dcore node through websockets
+```
+wscat -nc ws://localhost:18090
+```
