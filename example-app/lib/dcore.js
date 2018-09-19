@@ -229,6 +229,7 @@ const initialSetup = async (params) => {
 
   } catch (err) {
     l.error(`initial setup ${err}`)
+    throw err
   }
 }
 
