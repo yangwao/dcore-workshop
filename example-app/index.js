@@ -28,6 +28,12 @@ const wrap = (fn) => {
   }
 }
 
+app.post('/unlock', wrap(async (req, res) => {
+  const response = await dcore.initialSetup(publicAccount)
+  l.info({response})
+  res.send('success')
+}))
+
 app.post('/account', wrap(async (req, res) => {
   const { newAccountAddress } = req.body
 
@@ -39,8 +45,6 @@ app.post('/account', wrap(async (req, res) => {
 
   const brainkeyResult = (await dcore.suggestBrainKey()).result
   l.info({brainkeyResult})
-  const response = await dcore.initialSetup(publicAccount)
-  l.info({response})
   const newAcc = await dcore.registerAccount(
     newAccountAddress,
     brainkeyResult.pub_key,
@@ -60,10 +64,6 @@ app.post('/account', wrap(async (req, res) => {
   })
 }))
 
-// app.post('/login', wrap(async (req, res) => {
-
-// }))
-
 app.get('/account/:accountAddress', wrap(async (req, res) => {
   const { accountAddress } = req.params
   const account = await dcore.getAccount(accountAddress)
@@ -73,6 +73,12 @@ app.get('/account/:accountAddress', wrap(async (req, res) => {
 app.get('/messages/:accountAddress', wrap(async (req, res) => {
   const { accountAddress } = req.params
   const messages = await dcore.getMessagesByAddress(accountAddress)
+  res.send({ messages })
+}))
+
+app.post('/message', wrap(async (req, res) => {
+  const { accountAddresses, message } = req.body
+  const messages = await dcore.sendMessage('public-account-1', accountAddresses, message)
   res.send({ messages })
 }))
 
