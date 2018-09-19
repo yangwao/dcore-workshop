@@ -52,6 +52,15 @@ const getMessagesByAddress = async (accountAddress) => {
   }).json
 }
 
+const sendMessage = async (fromAccountAddress, toAccountAddresses, message) => {
+  dOpts.body.method = 'send_message'
+  dOpts.body.params = [fromAccountAddress, toAccountAddresses, message]
+  l.info(dOpts)
+  return r2.post(dOpts.uri, {
+    json: dOpts.body
+  }).json
+}
+
 const suggestBrainKey = async () => {
   dOpts.body.method = 'suggest_brain_key'
 
@@ -270,5 +279,6 @@ module.exports = {
   checkAvailability,
   suggestBrainKey,
   registerAccount,
-  getMessagesByAddress
+  getMessagesByAddress,
+  sendMessage
 }
