@@ -47,6 +47,12 @@ docker rm -f example-app-dcore-cliwallet
 docker rm -f example-app-dcore-publictestnet
 ```
 
+Remove container data
+```
+rm -rf example-app/data_publictestnet # this will remove blockchain data
+rm -rf example-app/data_cliwallet # this will remove wallet data
+```
+
 ### Dcore
 Connect to the dcore node through websockets
 ```
