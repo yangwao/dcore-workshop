@@ -43,6 +43,15 @@ const setPassword = async () => {
   }).json
 }
 
+const getMessagesByAddress = async (accountAddress) => {
+  dOpts.body.method = 'get_messages'
+  dOpts.body.params = [accountAddress, 100]
+
+  return r2.post(dOpts.uri, {
+    json: dOpts.body
+  }).json
+}
+
 const suggestBrainKey = async () => {
   dOpts.body.method = 'suggest_brain_key'
 
@@ -260,5 +269,6 @@ module.exports = {
   isNew,
   checkAvailability,
   suggestBrainKey,
-  registerAccount
+  registerAccount,
+  getMessagesByAddress
 }

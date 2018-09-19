@@ -60,14 +60,20 @@ app.post('/account', wrap(async (req, res) => {
   })
 }))
 
-app.post('/login', wrap(async (req, res) => {
+// app.post('/login', wrap(async (req, res) => {
 
+// }))
+
+app.get('/account/:accountAddress', wrap(async (req, res) => {
+  const { accountAddress } = req.params
+  const account = await dcore.getAccount(accountAddress)
+  res.send({ account })
 }))
 
-app.get('/account/:accountName', wrap(async (req, res) => {
-  const { accountName } = req.params
-  const account = await dcore.getAccount(accountName)
-  res.send({ account })
+app.get('/messages/:accountAddress', wrap(async (req, res) => {
+  const { accountAddress } = req.params
+  const messages = await dcore.getMessagesByAddress(accountAddress)
+  res.send({ messages })
 }))
 
 // eslint-disable-next-line no-unused-vars

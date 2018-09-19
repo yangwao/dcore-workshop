@@ -41,6 +41,12 @@ docker exec -it example-app-dcore-publictestnet bash
 docker exec -it example-app-dcore-cliwallet bash
 ```
 
+Remove containers
+```
+docker rm -f example-app-dcore-cliwallet
+docker rm -f example-app-dcore-publictestnet
+```
+
 ### Dcore
 Connect to the dcore node through websockets
 ```
