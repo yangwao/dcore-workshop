@@ -43,6 +43,14 @@ const setPassword = async () => {
   }).json
 }
 
+const suggestBrainKey = async () => {
+  dOpts.body.method = 'suggest_brain_key'
+
+  return r2.post(dOpts.uri, {
+    json: dOpts.body
+  }).json
+}
+
 const unlock = async () => {
   dOpts.body.method = 'unlock'
   dOpts.body.params = [d.password]
@@ -89,6 +97,37 @@ const doesAccExist = async (account) => {
     return 0
   }
   return 1
+}
+
+const registerAccount = async (accountAddress, accountOwnerKey, accountActiveKey, registrarAccount) => {
+  const accountExists = await doesAccExist(accountAddress)
+  l.info({accountExists})
+  if (accountExists) {
+    throw new Error('account_already_exists')
+  }
+
+  dOpts.body.method = 'register_account'
+  dOpts.body.params = [
+    accountAddress,
+    accountOwnerKey,
+    accountActiveKey,
+    registrarAccount,
+    true
+  ]
+
+  l.info(dOpts.body)
+
+  const res = await r2.post(dOpts.uri, {
+    json: dOpts.body
+  }).json
+
+  l.info(res)
+
+  if (res.error && res.error.code) {
+    throw new Error('error_while_registering_account')
+  }
+
+  return res.result
 }
 
 const getBalance = async (account) => {
@@ -219,5 +258,7 @@ module.exports = {
   listMyAccounts,
   unlock,
   isNew,
-  checkAvailability
+  checkAvailability,
+  suggestBrainKey,
+  registerAccount
 }
