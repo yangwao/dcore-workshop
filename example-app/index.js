@@ -1,4 +1,3 @@
-// const dcorejs = require('dcorejs')
 const app = require('express')()
 const bodyParser = require('body-parser')
 const cookieParser = require('cookie-parser')
@@ -31,7 +30,7 @@ const wrap = (fn) => {
 app.post('/unlock', wrap(async (req, res) => {
   const response = await dcore.initialSetup(publicAccount)
   l.info({response})
-  res.send('success')
+  res.send({ status: 'success'})
 }))
 
 app.post('/account', wrap(async (req, res) => {
