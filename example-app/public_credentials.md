@@ -5,6 +5,13 @@
 	"privateKey": "5J2Not8WWF7TKKHbU4gGtiYb5ML3fC5MghRZsB3oLJTrbNVGAF9"
 }
 
+{
+	"address": "test-ylabs",
+	"publicKey": "DCT7Qk7y5Fs4rVKWnHbj5wftzJsJnjyvZnz3Emn8r2QxMriVVpGv5",
+	"brainKey": "AGGRADE GOWN LENTIGO GIDDEA AXIL BALDISH ATINGLE YIRD BEVELED MISWORD SQUIFFY SNORE KISSAGE BEWORK BUMBLER AYOUS",
+	"privateKey": "5JMy8rJnqHsfatptDR4u6v6t4onqv1Ltnqqbh4xxm3Fp2fxSTGy"
+}
+
 account_name : public-account-1 
 Private key:  5KfatbpE1zVdnHgFydT7Cg9hJmUVLN7vQXJkBbzGrNSND3uFmAa
 

@@ -3,7 +3,7 @@ dcore 🇰🇷workshop
 
 Requirements 
 * Docker (17+) & docker-compose (1.22+)
-* Insomnia or other http client
+* [Insomnia](https://insomnia.rest/) or other http client
 * Node.js (10+) & npm // only for those with experience with JS
 * IDE (Visual Studio Code, Atom, Sublime Text, Vim … )
 * Fresh mind or coffee
