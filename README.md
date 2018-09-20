@@ -1,6 +1,19 @@
 # dcore-workshop
 dcore 🇰🇷workshop
 
+Requirements 
+* Docker (17+) & docker-compose (1.22+)
+* Insomnia or other http client
+* Node.js (10+) & npm // only for those with experience with JS
+* IDE (Visual Studio Code, Atom, Sublime Text, Vim … )
+* Fresh mind or coffee
+
+### Links
+Telegram channel https://t.me/DCoreDevelopers \
+Dcore documentation https://docs.decent.ch/ \
+Dcore Use Cases https://docs.decent.ch/UseCases/ \
+Github repository https://github.com/DECENTfoundation \
+Public testnet explorer https://hackathon-explorer.decent.ch/ 
 
 # example-app
 ## Run it like
